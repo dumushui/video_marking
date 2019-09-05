@@ -73,7 +73,7 @@ def collect_character(list_:list):
 
 
 
-def formulate_string(list_:list):
+def formulate_string(list_:list,sep='_'):
     ''' to combine letter into the string in specific format
     Desc: 
         connect labels with '_' 
@@ -95,10 +95,10 @@ def formulate_string(list_:list):
     if len(list_) == 5: #
         return ''.join(list_)
     else:
-        return '_'.join(list_)
+        return sep.join(list_)
         
 
-def return_string(sp:ipywidgets.widgets.widget_box.VBox):
+def return_string(sp:ipywidgets.widgets.widget_box.VBox, sep='_'):
     ''' return labels string
     Desc:
         using functions behind to return labels string 
@@ -113,4 +113,4 @@ def return_string(sp:ipywidgets.widgets.widget_box.VBox):
         list_.remove('')
     list_ = collect_character(list_)
     str_ = formulate_string(list_)
-    return '_'+str_
+    return sep+str_
